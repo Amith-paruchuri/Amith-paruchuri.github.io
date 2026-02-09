@@ -1,207 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Amith Paruchuri</title>
+    <title>Amith Paruchuri | Computational Medicine</title>
     <meta charset="utf-8">
-    <meta name="description" content="Amith Paruchuri | Computational Biology | Pathology AI | Multi-omics | Medical Imaging | Research Portfolio">
-
+    <meta name="description" content="Amith Paruchuri | Computational Pathology | Multiomics | Medical Imaging | AI in Medicine">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-            max-width: 1050px;
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 1100px;
             margin: 40px auto;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #222;
         }
-        h1 { font-size: 42px; margin-bottom: 5px; }
-        h2 { margin-top: 50px; border-bottom: 2px solid #eee; padding-bottom: 6px;}
-        .top {
-            display: flex;
-            gap: 30px;
-            align-items: center;
+        .header{
+            display:flex;
+            gap:30px;
+            align-items:center;
         }
-        .photo {
-            width: 160px;
-            border-radius: 12px;
+        .header img{
+            width:180px;
+            border-radius:12px;
         }
-        .links a {
-            margin-right: 18px;
-            font-weight: 600;
-            text-decoration: none;
+        h1{margin-bottom:5px;}
+        h2{
+            margin-top:45px;
+            border-bottom:2px solid #eee;
+            padding-bottom:6px;
         }
-        .project {
-            margin-top: 30px;
+        h3{margin-top:30px;}
+        .links a{
+            margin-right:15px;
+            font-weight:bold;
         }
-        .project img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 15px;
+        .tools{
+            margin-top:10px;
+            font-style:italic;
+            color:#444;
         }
-        .desc {
-            margin-top: 10px;
-            color: #444;
+        .figure img{
+            width:100%;
+            margin-top:15px;
+            border-radius:8px;
         }
     </style>
 </head>
 
 <body>
 
-<div class="top">
-    <img src="photo.jpg" class="photo">
+<div class="header">
+    <img src="profile.jpg">
     <div>
         <h1>Hi, I'm Amith Paruchuri 👋</h1>
         <p>
-        Final year MBBS student at AIIMS New Delhi <br>
-        I work at the intersection of <b>clinical medicine, bioinformatics, and AI</b>.
+        Final year MBBS student at AIIMS New Delhi.  
+        I work at the intersection of clinical medicine, bioinformatics, and artificial intelligence.
+        My work spans multiomics analysis, medical imaging, digital pathology, and deep learning
+        to decode disease biology from high-dimensional biomedical data.
         </p>
-
-        <p>
-        I have experience working with multi-omics data including genomics, microarray,
-        bulk and single-cell transcriptomics, proteomics, and integrating these with
-        medical imaging modalities such as MRI, Ultrasound, EEG, and Whole Slide
-        Histopathology Images.
-        </p>
-
-        <p>
-        Research experience at <b>Harvard Medical School, IISc Bangalore, CCMB Hyderabad</b>.
-        </p>
-
-        <p><b>Tools & Packages:</b> Python, R, Seurat, Scanpy, SCENIC, CellChat, NicheNet,
-        clusterProfiler, TIAToolbox, CellViT, OpenCV, PyTorch, SimpleITK, VS Code, RStudio</p>
 
         <div class="links">
-            <a href="Amith_Paruchuri_CV.pdf">📄 Download CV</a>
+            <a href="Amith_Paruchuri_CV.pdf">Download CV</a>
             <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba">LinkedIn</a>
             <a href="https://github.com/Amith-paruchuri">GitHub</a>
-            <a href="https://kaggle.com/">Kaggle</a>
         </div>
     </div>
 </div>
 
-
-<h2>🚀 Research & Projects</h2>
-
-
-<div class="project">
-<h3>🧠 Brain–Retina Biological Aging Coupling (Submitted to AAIC 2026)</h3>
-<p class="desc">
-This project investigates whether biological aging captured through retinal imaging
-shares a systemic relationship with brain-derived aging signatures. Aging clocks were
-developed independently from structural brain measures and retinal imaging features
-extracted using pretrained foundation models. Cross-modal analysis was performed to
-study whether retinal and brain age deviations exhibit convergence or divergence across
-chronological age using regression and spline-based modeling.
-<br><br>
-<b>Tools:</b> Python, PyTorch, Imaging feature extraction, Statistical modeling
+<h2>Experience & Technical Background</h2>
+<p>
+I have worked extensively with genomics, microarray datasets, single-cell and bulk transcriptomics,
+proteomics, whole-slide histopathology images, MRIs, ultrasound, and EEG signals. I have completed
+research internships at Harvard Medical School, IISc Bangalore, and CCMB Hyderabad.
 </p>
-<img src="fig_retina.jpg">
-</div>
 
+<p><b>Software & Packages:</b> Python, R, VS Code, PyTorch, Seurat, SCENIC, CellChat, NicheNet,
+clusterProfiler, limma, glmnet, survival, TIAToolbox, CellViT, OpenCV, MNE</p>
 
-<div class="project">
-<h3>🧬 AML Transcriptomic Genomic Risk Score (Submitted to ASCO 2026)</h3>
-<p class="desc">
-A transcriptome-derived genomic risk score was developed using survival modeling and
-LASSO regression to capture immune and leukocyte differentiation programs that
-provide prognostic value independent of cytogenetics. Differential expression and
-pathway enrichment were performed to understand immune signaling patterns associated
-with survival risk.
-<br><br>
-<b>Tools:</b> R, limma, glmnet, survival analysis, clusterProfiler
+<h2>Research Projects</h2>
+
+<h3>Brain–Retina Biological Aging Coupling (Submitted to AAIC 2026)</h3>
+<p>
+This project investigates whether biological aging is reflected systemically across different
+organs by studying the coupling between retinal and brain aging signatures. Independent aging
+clocks were developed from retinal fundus imaging using pretrained foundation models and from
+structural brain imaging features. The core objective was to determine whether deviations from
+chronological age in these two modalities converge or diverge across the lifespan.
 </p>
-<img src="fig_aml.jpg">
-</div>
-
-
-<div class="project">
-<h3>🔬 Tumor Border Immune Infiltration in DLBCL (Submitted to USCAP 2026)</h3>
-<p class="desc">
-Whole-slide images were analyzed to quantify spatial immune infiltration patterns near
-tumor borders. A transition zone band was constructed around tumor margins and
-infiltration gradients were modeled as spatial curves to derive objective features that
-capture tumor–immune topology.
-<br><br>
-<b>Tools:</b> Python, TIAToolbox, CellViT, OpenCV
+<p>
+The analysis involved residualized modeling, interaction analysis, and spline-based nonlinear
+regression to examine cross-modal relationships while accounting for age effects. This work
+demonstrates how multimodal imaging can capture shared aging biology.
 </p>
-<img src="fig_dlbcl.jpg">
-</div>
+<p class="tools">Tools: Python, PyTorch, NumPy, Pandas, SciPy, Matplotlib</p>
+<div class="figure"><img src="retina_brain.jpg"></div>
 
-
-<div class="project">
-<h3>🧫 Immune Activation Index in Coeliac Disease (Submitted to DDW 2026)</h3>
-<p class="desc">
-Duodenal transcriptomes were analyzed to characterize immune and epithelial programs.
-Immune deconvolution was performed and an immune activation index was derived to
-quantify mucosal immune activity beyond histology.
-<br><br>
-<b>Tools:</b> R, limma, xCell, pathway enrichment
+<h3>Astrocyte Transcriptomic Signatures in Alzheimer’s Disease and Tauopathies (AAIC 2026)</h3>
+<p>
+Using single-nucleus RNA sequencing, this study identifies shared and disease-specific astrocyte
+states across Alzheimer’s disease and primary tauopathies. Clustering and differential proportion
+analysis revealed distinct astrocyte phenotypes enriched in inflammatory, stress signaling, and
+homeostatic pathways.
 </p>
-<img src="fig_celiac.jpg">
-</div>
-
-
-<div class="project">
-<h3>🌌 Astrocyte Signatures in AD and Tauopathies (Submitted to AAIC 2026)</h3>
-<p class="desc">
-Single-nucleus RNA-seq was used to identify shared and disease-specific astrocyte
-transcriptomic states across neurodegenerative proteinopathies. Cluster proportion,
-differential expression, and pathway enrichment were performed with spatial mapping.
-<br><br>
-<b>Tools:</b> R, Seurat, SCENIC, CellChat, clusterProfiler
+<p>
+Pathway enrichment and spatial transcriptomic mapping were used to localize these astrocyte
+states within brain regions, enabling identification of reactive phenotypes that differ across
+disease proteinopathies.
 </p>
-<img src="fig_astro.jpg">
-</div>
+<p class="tools">Tools: R, Seurat, SCENIC, clusterProfiler</p>
+<div class="figure"><img src="astrocyte.jpg"></div>
 
-
-<div class="project">
-<h3>🧠 Dementia Stage Classification from MRI (Submitted to AAN 2026)</h3>
-<p class="desc">
-Transfer learning using MobileNet was applied to brain MRI images to classify stages
-of dementia. Grad-CAM visualization was used to assess spatial attention patterns.
-<br><br>
-<b>Tools:</b> Python, PyTorch, Grad-CAM
+<h3>Lymphocyte Infiltration at Tumor Border in DLBCL (USCAP 2026)</h3>
+<p>
+This computational pathology project quantifies how lymphocytes infiltrate tumor borders in
+DLBCL whole-slide images. Tumor and cellular compartments were segmented using deep learning,
+and a transition zone band was created around tumor margins.
 </p>
-<img src="fig_mri.jpg">
-</div>
-
-
-<div class="project">
-<h3>🧠 EEG Spectrogram Classification for Schizophrenia (Submitted to AAAI 2026)</h3>
-<p class="desc">
-EEG signals were converted into spectrogram images and multiple deep learning
-architectures were evaluated to classify schizophrenia from controls using
-high-confidence prediction thresholds.
-<br><br>
-<b>Tools:</b> Python, MNE, PyTorch, CNN architectures
+<p>
+Spatial infiltration patterns were modeled as continuous curves and slope-based features were
+extracted to objectively represent tumor–immune topology. These features capture biologically
+meaningful spatial heterogeneity not visible through bulk immune density.
 </p>
-<img src="fig_eeg.jpg">
-</div>
+<p class="tools">Tools: Python, TIAToolbox, CellViT, OpenCV</p>
+<div class="figure"><img src="dlbcl.jpg"></div>
 
-
-<div class="project">
-<h3>🧪 Mitotic Figure Detection using SAM + ResNet</h3>
-<p class="desc">
-RGB crops around nuclei were extracted from WSIs. Cell masks were generated using
-Segment Anything (SAM) and fused with image crops to train a ResNet classifier for
-mitotic figure detection, a key prognostic feature in multiple tumors.
-<br><br>
-<b>Tools:</b> Python, SAM, OpenCV, ResNet
+<h3>AML Transcriptomic Genomic Risk Score (ASCO 2026)</h3>
+<p>
+This work develops a transcriptome-derived genomic risk score capable of capturing immune
+regulatory and leukocyte differentiation programs beyond traditional cytogenetic risk
+stratification. Survival modeling and LASSO regression were used to derive gene signatures.
 </p>
-<img src="fig_mitosis.jpg">
-</div>
+<p>
+Differential expression and pathway enrichment analyses were used to characterize immune
+signaling landscapes underlying adverse prognosis.
+</p>
+<p class="tools">Tools: R, limma, glmnet, survival, clusterProfiler</p>
+<div class="figure"><img src="aml.jpg"></div>
+
+<h3>Immune Activation Index in Coeliac Disease (DDW 2026)</h3>
+<p>
+This study investigates mucosal transcriptomic landscapes in coeliac disease using differential
+gene expression and immune deconvolution. An immune activation index was derived to quantify
+mucosal immune state beyond histology.
+</p>
+<p>
+Pathway enrichment highlighted inflammatory signaling, antigen presentation, and lymphoid
+infiltration correlating with disease activity.
+</p>
+<p class="tools">Tools: R, limma, xCell, clusterProfiler</p>
+<div class="figure"><img src="fig_celiac.jpg"></div>
+
+<h3>Dementia Stage Classification from MRI using MobileNet (AAN 2026)</h3>
+<p>
+Transfer learning using MobileNet was applied to structural MRI to classify stages of dementia.
+Grad-CAM visualization was used to confirm spatial consistency of attention with disease-
+relevant anatomical regions.
+</p>
+<p class="tools">Tools: Python, PyTorch, Grad-CAM</p>
+<div class="figure"><img src="dementia1.jpg"></div>
+
+<h3>EEG Spectrogram Classification for Schizophrenia (AAAI 2026)</h3>
+<p>
+EEG signals were converted into spectrogram representations and classified using deep learning
+architectures to develop an objective screening tool for schizophrenia, particularly suited for
+low-resource settings.
+</p>
+<p class="tools">Tools: Python, MNE, PyTorch</p>
+<div class="figure"><img src="eeg.jpg"></div>
+
+<h3>Mitotic Cell Detection using SAM + ResNet</h3>
+<p>
+Mitotic figures are critical prognostic markers in several tumors. In this project, RGB crops
+around cell coordinates were generated and fused with SAM-derived segmentation masks to train
+a ResNet classifier for mitotic detection.
+</p>
+<p class="tools">Tools: Python, OpenCV, SAM, ResNet</p>
+<div class="figure"><img src="mitosis.jpg"></div>
 
 
-<div class="project">
-<h3>🧠 Prostate Cancer Grading from Multi-slice MRI</h3>
-<p class="desc">
+<h3> Prostate Cancer Grading from Multi-slice MRI</h3>
+<p>
 Vision Transformer features were extracted from multi-slice prostate MRI scans and
 aggregated at case level to predict cancer grade using deep learning.
-<br><br>
-<b>Tools:</b> Python, PyTorch, ViT, SimpleITK
 </p>
-</div>
-
+<p class="tools">Tools: Python, OpenCV, SAM, ResNet</p>
 
 </body>
 </html>
-
