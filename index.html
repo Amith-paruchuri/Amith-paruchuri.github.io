@@ -62,6 +62,8 @@
             <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba" target="_blank">LinkedIn</a>
             <a href="https://github.com/Amith-paruchuri" target="_blank">GitHub</a>
             <a href="https://www.kaggle.com/paruchurisaiamith" target="_blank">Kaggle</a>
+            <a href="https://www.researchgate.net/profile/Amith-Paruchuri" target="_blank">ResearchGate</a>
+            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
         </div>
     </div>
 </div>
@@ -79,7 +81,44 @@ clusterProfiler, limma, glmnet, survival, TIAToolbox, CellViT, OpenCV, MNE</p>
 
 <h2>Research Projects</h2>
 
-<h3>Brain–Retina Biological Aging Coupling (Submitted to AAIC 2026)</h3>
+<h3>ECG-Derived Cardiac Biological Age Gap (AHA 2026)</h3>
+<p>
+A 1D residual neural network was applied to the PTB-XL dataset (n=21,837 ECGs) to predict
+chronological age from raw 12-lead waveforms, enabling computation of an ECG biological age gap
+for each subject. Age-adjusted gap analysis across diagnostic categories revealed significantly
+elevated gaps in conduction disorders, ST/T-wave changes, and myocardial infarction versus
+normal ECGs.
+</p>
+<p>
+Sex-stratified analysis showed females consistently demonstrated larger positive age-adjusted gaps
+than males across all pathological categories. Per-lead waveform feature analysis identified
+lead skewness — particularly V2 skewness (r=0.350) and aVL skewness (r=0.342) — as the dominant
+morphological substrate of cardiac electrical aging, outperforming amplitude-based features.
+These findings support integration of ECG biological age gap within multi-organ biological age
+frameworks alongside neural and retinal aging biomarkers.
+</p>
+<p class="tools">Tools: Python, PyTorch, 1D ResNet, SciPy, Pandas</p>
+<div class="figure"><img src="ecg_waveform.png"></div>
+
+<h3>Transcriptomic Drivers of MASLD Progression: Osteopontin (SPP1) as a Central Network Hub</h3>
+<p>
+RNA-sequencing data from 216 liver biopsies (control, NAFL, and NASH stratified by fibrosis
+stage F0–F4) were analyzed to identify the transcriptional programs driving progression from
+steatosis to steatohepatitis. Differential expression using voom-limma identified a 563-gene
+progression signature (493 upregulated, 70 downregulated; FDR &lt;0.05), with upregulation of
+fibroinflammatory genes and suppression of metabolic programs.
+</p>
+<p>
+GSEA revealed enrichment of EMT, TNF/NF-κB, IL-6/STAT3, and inflammatory pathways. Network
+analysis of the top DEGs mapped onto STRING identified SPP1 (osteopontin) as the dominant hub
+gene (betweenness 476, over double the next node), centrally connecting inflammatory,
+matrix-remodeling, and ductular modules. SPP1 rose progressively with fibrosis stage (FDR 2.9e-9),
+identifying it as a candidate biomarker and therapeutic target for noninvasive MASLD staging.
+</p>
+<p class="tools">Tools: R, voom-limma, GSEA, clusterProfiler, STRING network analysis</p>
+<div class="figure"><img src="masld_network.png"></div>
+
+<h3>Brain–Retina Biological Aging Coupling</h3>
 <p>
 This project investigates whether biological aging is reflected systemically across different
 organs by studying the coupling between retinal and brain aging signatures. Independent aging
@@ -95,10 +134,10 @@ demonstrates how multimodal imaging can capture shared aging biology.
 <p class="tools">Tools: Python, PyTorch, NumPy, Pandas, SciPy, Matplotlib</p>
 <div class="figure"><img src="retina_brain.jpg"></div>
 
-<h3>Astrocyte Transcriptomic Signatures in Alzheimer’s Disease and Tauopathies (AAIC 2026)</h3>
+<h3>Astrocyte Transcriptomic Signatures in Alzheimer's Disease and Tauopathies</h3>
 <p>
 Using single-nucleus RNA sequencing, this study identifies shared and disease-specific astrocyte
-states across Alzheimer’s disease and primary tauopathies. Clustering and differential proportion
+states across Alzheimer's disease and primary tauopathies. Clustering and differential proportion
 analysis revealed distinct astrocyte phenotypes enriched in inflammatory, stress signaling, and
 homeostatic pathways.
 </p>
@@ -108,9 +147,9 @@ states within brain regions, enabling identification of reactive phenotypes that
 disease proteinopathies.
 </p>
 <p class="tools">Tools: R, Seurat, SCENIC, clusterProfiler</p>
-<div class="figure"><img src="astrocyte.jpg"></div>
+<div class="figure"><img src="astrocyte_degs.jpg"></div>
 
-<h3>Lymphocyte Infiltration at Tumor Border in DLBCL (USCAP 2026)</h3>
+<h3>Lymphocyte Infiltration at Tumor Border in DLBCL</h3>
 <p>
 This computational pathology project quantifies how lymphocytes infiltrate tumor borders in
 DLBCL whole-slide images. Tumor and cellular compartments were segmented using deep learning,
@@ -124,7 +163,7 @@ meaningful spatial heterogeneity not visible through bulk immune density.
 <p class="tools">Tools: Python, TIAToolbox, CellViT, OpenCV</p>
 <div class="figure"><img src="dlbcl.jpg"></div>
 
-<h3>AML Transcriptomic Genomic Risk Score (ASCO 2026)</h3>
+<h3>AML Transcriptomic Genomic Risk Score</h3>
 <p>
 This work develops a transcriptome-derived genomic risk score capable of capturing immune
 regulatory and leukocyte differentiation programs beyond traditional cytogenetic risk
@@ -137,7 +176,7 @@ signaling landscapes underlying adverse prognosis.
 <p class="tools">Tools: R, limma, glmnet, survival, clusterProfiler</p>
 <div class="figure"><img src="aml1.jpg"></div>
 
-<h3>Immune Activation Index in Coeliac Disease (DDW 2026)</h3>
+<h3>Immune Activation Index in Coeliac Disease</h3>
 <p>
 This study investigates mucosal transcriptomic landscapes in coeliac disease using differential
 gene expression and immune deconvolution. An immune activation index was derived to quantify
@@ -150,7 +189,7 @@ infiltration correlating with disease activity.
 <p class="tools">Tools: R, limma, xCell, clusterProfiler</p>
 <div class="figure"><img src="fig_celiac.jpg"></div>
 
-<h3>Dementia Stage Classification from MRI using MobileNet (AAN 2026)</h3>
+<h3>Dementia Stage Classification from MRI using MobileNet</h3>
 <p>
 Transfer learning using MobileNet was applied to structural MRI to classify stages of dementia.
 Grad-CAM visualization was used to confirm spatial consistency of attention with disease-
@@ -159,7 +198,7 @@ relevant anatomical regions.
 <p class="tools">Tools: Python, PyTorch, Grad-CAM</p>
 <div class="figure"><img src="dementia.jpeg"></div>
 
-<h3>EEG Spectrogram Classification for Schizophrenia (AAAI 2026)</h3>
+<h3>EEG Spectrogram Classification for Schizophrenia</h3>
 <p>
 EEG signals were converted into spectrogram representations and classified using deep learning
 architectures to develop an objective screening tool for schizophrenia, particularly suited for
@@ -177,8 +216,7 @@ a ResNet classifier for mitotic detection.
 <p class="tools">Tools: Python, OpenCV, SAM, ResNet</p>
 <div class="figure"><img src="mitosis.jpg"></div>
 
-
-<h3> Prostate Cancer Grading from Multi-slice MRI</h3>
+<h3>Prostate Cancer Grading from Multi-slice MRI</h3>
 <p>
 Vision Transformer features were extracted from multi-slice prostate MRI scans and
 aggregated at case level to predict cancer grade using deep learning.
