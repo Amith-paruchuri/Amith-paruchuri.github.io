@@ -6,25 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Amith Paruchuri | Computational Pathology | Multiomics | Medical Imaging | AI in Medicine">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+        :root {
+            --paper: #F7F5F0;
+            --ink: #1C1B19;
+            --slate: #5B5A54;
+            --maroon: #7C2A2A;
+            --maroon-tint: #F5E9E7;
+            --line: #E4E0D5;
+            --card: #FFFFFF;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', Arial, sans-serif;
-            background: #fafaf9;
-            color: #1a1a1a;
+            background: var(--paper);
+            color: var(--ink);
             line-height: 1.7;
             font-size: 15px;
         }
+
+        a { color: inherit; }
 
         /* ── Nav ── */
         nav {
             position: sticky;
             top: 0;
-            background: rgba(250,250,249,0.92);
+            background: rgba(247,245,240,0.9);
             backdrop-filter: blur(8px);
-            border-bottom: 1px solid #ebebeb;
+            border-bottom: 1px solid var(--line);
             z-index: 100;
         }
         .nav-inner {
@@ -35,14 +50,14 @@
             align-items: center;
             justify-content: space-between;
         }
-        .nav-name { font-size: 14px; font-weight: 500; }
+        .nav-name { font-family: 'Newsreader', serif; font-size: 15px; font-weight: 500; }
         .nav-links { display: flex; gap: 22px; }
         .nav-links a {
             font-size: 13px;
-            color: #666;
+            color: var(--slate);
             text-decoration: none;
         }
-        .nav-links a:hover { color: #1a1a1a; }
+        .nav-links a:hover { color: var(--ink); }
 
         /* ── Layout ── */
         .page {
@@ -56,7 +71,7 @@
             display: flex;
             gap: 28px;
             align-items: flex-start;
-            margin-bottom: 44px;
+            margin-bottom: 56px;
         }
         .avatar {
             width: 84px;
@@ -64,18 +79,19 @@
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
-            border: 2px solid #ebebeb;
+            border: 2px solid var(--line);
         }
         .avatar img { width: 100%; height: 100%; object-fit: cover; }
         .hero-body h1 {
-            font-size: 22px;
+            font-family: 'Newsreader', serif;
+            font-size: 26px;
             font-weight: 500;
             margin-bottom: 6px;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
         }
         .hero-body .tagline {
             font-size: 14px;
-            color: #555;
+            color: var(--slate);
             margin-bottom: 14px;
             max-width: 580px;
         }
@@ -96,33 +112,204 @@
         .social-pill:hover { border-color: #aaa; background: #f5f5f5; }
         .social-pill svg { width: 13px; height: 13px; }
 
+        /* ── Bio essay ── */
+        .bio-essay {
+            max-width: 620px;
+            margin-bottom: 56px;
+        }
+        .bio-essay p {
+            font-family: 'Newsreader', serif;
+            font-size: 17.5px;
+            line-height: 1.75;
+            color: #2b2a27;
+            margin-bottom: 20px;
+        }
+        .bio-essay p:last-child { margin-bottom: 0; }
+        .bio-essay a {
+            color: var(--maroon);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(124,42,42,0.35);
+        }
+        .bio-essay a:hover { border-color: var(--maroon); }
+
         /* ── Background card ── */
         .bg-card {
-            background: #fff;
-            border: 1px solid #ebebeb;
+            background: var(--card);
+            border: 1px solid var(--line);
             border-radius: 12px;
             padding: 18px 22px;
-            margin-bottom: 44px;
+            margin-bottom: 56px;
         }
         .bg-card h2 {
             font-size: 12px;
             font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
+            letter-spacing: 0.06em;
             color: #999;
             margin-bottom: 8px;
         }
         .bg-card p { font-size: 13.5px; color: #444; line-height: 1.7; }
 
         /* ── Section label ── */
-        .section-label {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: #999;
-            margin-bottom: 16px;
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 28px;
         }
+        .section-head h2 {
+            font-family: 'Newsreader', serif;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .section-head .section-note {
+            font-size: 13px;
+            color: var(--slate);
+        }
+        section { margin-bottom: 64px; }
+        section:last-of-type { margin-bottom: 0; }
+
+        /* ── Institution crest ── */
+        .crest {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1.4px solid var(--maroon);
+            background: var(--maroon-tint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Newsreader', serif;
+            font-weight: 600;
+            color: var(--maroon);
+            letter-spacing: 0.01em;
+        }
+        .crest.sm-text { font-size: 10px; }
+        .crest.md-text { font-size: 13px; }
+        .crest.lg-text { font-size: 16px; }
+
+        .award-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1.4px solid var(--maroon);
+            background: var(--maroon-tint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--maroon);
+        }
+        .award-icon svg { width: 20px; height: 20px; }
+
+        /* ── Education timeline ── */
+        .timeline {
+            position: relative;
+            padding-left: 4px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: var(--line);
+        }
+        .edu-item {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            padding-bottom: 36px;
+        }
+        .edu-item:last-child { padding-bottom: 0; }
+        .edu-item .crest { position: relative; z-index: 1; background: var(--maroon-tint); }
+        .edu-body { padding-top: 3px; }
+        .edu-body .inst-name {
+            font-family: 'Newsreader', serif;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .edu-body .inst-meta {
+            font-size: 12.5px;
+            color: var(--slate);
+            font-style: italic;
+            font-family: 'Newsreader', serif;
+            margin-bottom: 10px;
+        }
+        .edu-body .inst-detail {
+            font-size: 13.5px;
+            color: #3a3a37;
+            margin-bottom: 6px;
+        }
+        .edu-body .inst-detail:last-child { margin-bottom: 0; }
+        .edu-body .highlight { color: var(--maroon); font-weight: 500; }
+
+        /* ── Experience feed (LinkedIn style) ── */
+        .exp-feed { display: flex; flex-direction: column; }
+        .exp-item {
+            display: flex;
+            gap: 18px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .exp-item:first-child { padding-top: 0; }
+        .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .exp-main { flex: 1; min-width: 0; }
+        .exp-role {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 1px;
+        }
+        .exp-org {
+            font-size: 13.5px;
+            color: #3a3a37;
+            margin-bottom: 2px;
+        }
+        .exp-org a { text-decoration: none; border-bottom: 1px solid var(--line); }
+        .exp-org a:hover { border-color: var(--maroon); color: var(--maroon); }
+        .exp-meta {
+            font-size: 12px;
+            color: var(--slate);
+            margin-bottom: 12px;
+        }
+        .exp-badge {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 500;
+            color: var(--maroon);
+            background: var(--maroon-tint);
+            padding: 2px 9px;
+            border-radius: 999px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .exp-desc {
+            font-size: 13.5px;
+            color: #3a3a37;
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+        .exp-desc + .exp-desc { margin-top: -6px; }
+        .tool-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+        .tool-tag {
+            font-size: 11px;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: #f5f5f3;
+            color: #666;
+            border: 1px solid #e8e8e5;
+        }
+        .link-row { display: flex; gap: 14px; flex-wrap: wrap; }
+        .link-row a {
+            font-size: 12px;
+            color: var(--maroon);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .link-row a:hover { border-color: var(--maroon); }
 
         /* ── Filters ── */
         .filter-row {
@@ -144,15 +331,15 @@
         }
         .filter-btn:hover { border-color: #aaa; }
         .filter-btn.active {
-            background: #1a1a1a;
+            background: var(--ink);
             color: #fff;
-            border-color: #1a1a1a;
+            border-color: var(--ink);
         }
 
         /* ── Project cards ── */
         .project-card {
             background: #fff;
-            border: 1px solid #ebebeb;
+            border: 1px solid var(--line);
             border-radius: 12px;
             padding: 20px 22px;
             margin-bottom: 12px;
@@ -173,7 +360,7 @@
             font-size: 14.5px;
             font-weight: 500;
             line-height: 1.45;
-            color: #1a1a1a;
+            color: var(--ink);
         }
         .venue-badge {
             flex-shrink: 0;
@@ -183,7 +370,6 @@
             border-radius: 6px;
             white-space: nowrap;
         }
-        /* Badge color variants */
         .badge-teal  { background: #e1f5ee; color: #0f6e56; }
         .badge-coral { background: #faece7; color: #993c1d; }
         .badge-purple{ background: #eeedfe; color: #3c3489; }
@@ -197,31 +383,23 @@
             line-height: 1.7;
             margin-bottom: 12px;
         }
-        .tool-tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-        .tool-tag {
-            font-size: 11px;
-            padding: 3px 9px;
-            border-radius: 6px;
-            background: #f5f5f3;
-            color: #666;
-            border: 1px solid #e8e8e5;
-        }
         .card-figure {
             margin-top: 16px;
             border-radius: 8px;
             overflow: hidden;
-            border: 1px solid #ebebeb;
+            border: 1px solid var(--line);
         }
-        .card-figure img {
-            width: 100%;
-            display: block;
-        }
-        /* Hidden state for filter */
+        .card-figure img { width: 100%; display: block; }
         .project-card.hidden { display: none; }
+
+        @media (max-width: 560px) {
+            .hero { gap: 18px; }
+            .avatar { width: 68px; height: 68px; }
+            .hero-body h1 { font-size: 22px; }
+            .edu-item, .exp-item { gap: 14px; }
+            .crest { width: 40px; height: 40px; }
+            .nav-links { gap: 14px; }
+        }
     </style>
 </head>
 
@@ -232,7 +410,10 @@
         <span class="nav-name">Amith Paruchuri</span>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#research">Research</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#awards">Awards</a>
+            <a href="#projects">Projects</a>
         </div>
     </div>
 </nav>
@@ -247,8 +428,7 @@
         <div class="hero-body">
             <h1>Amith Paruchuri</h1>
             <p class="tagline">
-                Final year MBBS student at AIIMS New Delhi, working at the intersection of clinical medicine,
-                bioinformatics, and AI. Research internships at Harvard Medical School, IISc Bangalore, and CCMB Hyderabad.
+                Final year medical student at AIIMS Delhi.
             </p>
             <div class="social-links">
                 <a class="social-pill" href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba" target="_blank">
@@ -275,11 +455,266 @@
         </div>
     </div>
 
+    <!-- Bio essay -->
+    <section id="bio" class="bio-essay">
+        <p>My relationship with bioinformatics began with resentment, not fascination. Genes felt like a kind of quiet tyranny, predetermining everything from skin color to height to disease risk, long before a person had any say in the matter. That determinism unsettled me.</p>
+        <p>Slowly, that aversion turned into fascination once I began actually working with genetic data and realized genes were never meant to be read in isolation to begin with. Disease reveals itself differently across modalities &mdash; transcriptomic activity, tissue architecture, imaging &mdash; and it was this realization that pulled me toward multimodal data fusion as the problem I actually wanted to spend my career on.</p>
+        <p>I am a final year medical student at <a href="https://www.aiims.edu/" target="_blank">AIIMS New Delhi</a>, India's top medical college, which I joined after securing Rank 43 among over 20 lakh candidates in <a href="https://neet.nta.nic.in/" target="_blank">NEET 2021</a> on a full scholarship. I am a <a href="https://iusstf.org/khorana-program-for-scholars" target="_blank">Khorana Scholar</a>, a distinction awarded to ten medical students across India each year, and spent a summer at the <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">MIND Data Science Lab</a> at Harvard Medical School studying astrocyte transcriptomic signatures in Alzheimer's disease and tauopathies using single-cell RNA sequencing.</p>
+        <p>Since then, my work has spanned computational pathology, genomics, proteomics, and imaging &mdash; all oriented around the same question: how do we combine these fragmented biological signals into models that actually reflect how disease behaves in a real patient. I co-founded <a href="https://www.aeternix.in/" target="_blank">Aeternix</a> alongside this research, working to solve the same fragmentation problem at the level of hospital data infrastructure in India.</p>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="section-head">
+            <h2>Education</h2>
+        </div>
+        <div class="timeline">
+
+            <div class="edu-item">
+                <div class="crest sm-text">AIIMS</div>
+                <div class="edu-body">
+                    <div class="inst-name">All India Institute of Medical Sciences, New Delhi</div>
+                    <div class="inst-meta">Bachelor of Medicine, Bachelor of Surgery (MBBS) · April 2022 – May 2027 (expected)</div>
+                    <p class="inst-detail">Final-year medical student, currently completing the compulsory rotating internship (May 2026 – May 2027): Internal Medicine (26w), Surgery (22w), Community Medicine (13w), Obstetrics &amp; Gynaecology (9w), Paediatrics (9w), Psychiatry (9w), Ophthalmology (6w), Anaesthesiology (4w), Dermatology (3w), Emergency Medicine (3w).</p>
+                    <p class="inst-detail">Admitted via <span class="highlight">NEET 2021, All India Rank 43 among over 20 lakh (2 million) candidates</span>, on a full scholarship covering the MBBS programme at India's top-ranked medical college.</p>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="crest md-text">NJC</div>
+                <div class="edu-body">
+                    <div class="inst-name">Narayana Junior College</div>
+                    <div class="inst-meta">Higher Secondary Education, Pre-Medical · Vijayawada, India · 2016 – 2020</div>
+                    <p class="inst-detail">8th through 12th grade.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Research Experience -->
+    <section id="experience">
+        <div class="section-head">
+            <h2>Research Experience</h2>
+        </div>
+        <div class="exp-feed">
+
+            <div class="exp-item">
+                <div class="crest sm-text">HMS</div>
+                <div class="exp-main">
+                    <div class="exp-role">Summer Researcher <span class="exp-badge">Khorana Scholar</span></div>
+                    <div class="exp-org">Department of Neurology, <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">Harvard Medical School</a> — MIND Data Science Lab, Mass General Brigham</div>
+                    <div class="exp-meta">May 2025 – Jul 2026 · 1 yr 3 mos · Boston, MA · On-site</div>
+                    <p class="exp-desc">Advised by Dr. Sudeshna Das. Determined the astrocyte transcriptomic signature and astrocyte-neuron interaction in tauopathies using single-cell RNA analysis — delivered as an oral presentation at AAIC 2026. Gained expertise in Seurat, clusterProfiler, CellChat, NicheNet, and Reactome in R.</p>
+                    <p class="exp-desc" style="font-size:12.5px;color:var(--slate);">Named after Nobel Laureate Har Gobind Khorana, the Khorana Scholarship selects only 10 medical students across India each year.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Seurat</span>
+                        <span class="tool-tag">CellChat</span>
+                        <span class="tool-tag">NicheNet</span>
+                        <span class="tool-tag">clusterProfiler</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">MIND Data Science Lab ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest md-text">Emory</div>
+                <div class="exp-main">
+                    <div class="exp-role">Research Intern</div>
+                    <div class="exp-org">Department of Bioengineering, <a href="https://med.emory.edu/departments/radiology/research/research-labs/madabhushi-lab/index.html" target="_blank">Emory University</a> — Madabhushi Lab</div>
+                    <div class="exp-meta">Jul 2025 – Present · Atlanta, GA · Remote</div>
+                    <p class="exp-desc">Advised by Dr. Anant Madabhushi. Deciphered the immune architecture and role of tumor-infiltrating lymphocytes (TILs) as a survival biomarker in diffuse large B-cell lymphoma using deep learning — presented as a platform presentation at USCAP 2026.</p>
+                    <p class="exp-desc">Also studied concordance between brain and retinal biological ages using multimodal imaging, presented as a poster at AAIC 2026.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">CellViT</span>
+                        <span class="tool-tag">DBSCAN</span>
+                        <span class="tool-tag">Survival analysis</span>
+                        <span class="tool-tag">Neural networks</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="https://med.emory.edu/departments/radiology/research/research-labs/madabhushi-lab/index.html" target="_blank">Madabhushi Lab ↗</a>
+                        <a href="https://www.laboratoryinvestigation.org/article/S0023-6837(25)01452-7/fulltext" target="_blank">Laboratory Investigation paper ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest md-text">UCam</div>
+                <div class="exp-main">
+                    <div class="exp-role">Machine Learning Summer School</div>
+                    <div class="exp-org"><a href="https://www.vanderschaar-lab.com/" target="_blank">University of Cambridge</a> — van der Schaar Lab</div>
+                    <div class="exp-meta">Aug 2025 – Sep 2025 · 2 mos · Remote</div>
+                    <p class="exp-desc">Selected for the Cambridge Centre for AI in Medicine (CCAIM) summer school run by the van der Schaar Lab. Covered AutoML, ML fundamentals, predictive digital twins, medical imaging AI, AI governance, ML interpretability, protein language models for bacterial evolution prediction, AI-driven precision dosing, and foundation models in intensive care.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">AutoML</span>
+                        <span class="tool-tag">Digital twins</span>
+                        <span class="tool-tag">ML interpretability</span>
+                        <span class="tool-tag">Foundation models</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="https://www.vanderschaar-lab.com/" target="_blank">van der Schaar Lab ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest sm-text">ETHZ</div>
+                <div class="exp-main">
+                    <div class="exp-role">Swiss Oncology Summer School</div>
+                    <div class="exp-org">Organized by <a href="https://hest.ethz.ch/studium/medizin/summerschool.html" target="_blank">ETH Zurich</a></div>
+                    <div class="exp-meta">September 2026 · Zurich, Switzerland</div>
+                    <p class="exp-desc">Selected for the Swiss Oncology Summer School, a program focused on computational and translational oncology, bringing together clinical and quantitative approaches to cancer research.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Computational oncology</span>
+                        <span class="tool-tag">Translational research</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="https://hest.ethz.ch/studium/medizin/summerschool.html" target="_blank">Program page ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest sm-text">IISc</div>
+                <div class="exp-main">
+                    <div class="exp-role">MBBS/MPH Research Intern</div>
+                    <div class="exp-org">Department of Biochemistry, <a href="https://biochem.iisc.ac.in/sandeep-m-eswarappa.php" target="_blank">Indian Institute of Science</a> — Eswarappa Lab</div>
+                    <div class="exp-meta">Jun 2024 – Jul 2024 · Bengaluru, India · On-site</div>
+                    <p class="exp-desc">Advised by Dr. Sandeep M. Eswarappa. Studied translational readthrough in the DMD gene as a therapeutic strategy for Duchenne muscular dystrophy. Gained hands-on expertise in DNA/RNA extraction, PCR, agarose gel electrophoresis, heat-shock transformation, lipofectamine-based transfection, and Western blotting.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">PCR</span>
+                        <span class="tool-tag">qPCR / RT-PCR</span>
+                        <span class="tool-tag">Transfection</span>
+                        <span class="tool-tag">Western blotting</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="https://biochem.iisc.ac.in/sandeep-m-eswarappa.php" target="_blank">Eswarappa Lab ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest sm-text">CCMB</div>
+                <div class="exp-main">
+                    <div class="exp-role">Winter Research Intern — MedSRT 4.0</div>
+                    <div class="exp-org"><a href="http://recruitment.ccmb.res.in/training_programs/MedSRT/" target="_blank">Centre for Cellular and Molecular Biology</a>, Hyderabad</div>
+                    <div class="exp-meta">Dec 2024 – Jan 2025 · Dec 16–28, 2024 · Hyderabad, India</div>
+                    <p class="exp-desc">Selected for the Medical Student Research Training Programme (MedSRT 4.0), one of 30 medical students nationwide, for hands-on training in molecular biology and genomic diagnostics.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Karyotyping</span>
+                        <span class="tool-tag">Sanger sequencing</span>
+                        <span class="tool-tag">NGS</span>
+                        <span class="tool-tag">Optical genome mapping</span>
+                    </div>
+                    <div class="link-row">
+                        <a href="http://recruitment.ccmb.res.in/training_programs/MedSRT/" target="_blank">MedSRT programme ↗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Awards & Honors -->
+    <section id="awards">
+        <div class="section-head">
+            <h2>Awards &amp; Honors</h2>
+        </div>
+        <div class="exp-feed">
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">AAIC Travel Fellowship</div>
+                    <div class="exp-org">Issued by Alzheimer's Association</div>
+                    <div class="exp-meta">Jun 2026 · Associated with Harvard University</div>
+                    <p class="exp-desc">Awarded a travel grant to present research on transcriptomic heterogeneity of astrocytes in tauopathies at the Alzheimer's Association International Conference (AAIC) 2026, London.</p>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Oral presentation ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">AAIC travel grant ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">Harvard Research Intern</div>
+                    <div class="exp-org">Issued by Massachusetts General Hospital, Harvard Medical School</div>
+                    <div class="exp-meta">May 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Invite &amp; stipend letter ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Harvard Medical School ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">Khorana Scholarship</div>
+                    <div class="exp-org">Issued by Indo-US Science &amp; Technology Forum (IUSSTF)</div>
+                    <div class="exp-meta">Feb 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <p class="exp-desc">Selected as a recipient of the Khorana Scholarship 2024. Named in tribute to Dr. Har Gobind Khorana, Nobel Laureate in 1968 for his pioneering work at the interface of chemistry and biology, the program fosters Indo-U.S. scientific collaboration by funding cutting-edge research at Harvard Medical School alongside leading mentors advancing the boundaries of science.</p>
+                    <div class="link-row">
+                        <a href="https://iusstf.org/khorana-program-for-scholars" target="_blank">Khorana Program for Scholars ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/1305445822/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Khorana offer letter ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">CNA Fellowship</div>
+                    <div class="exp-org">Issued by Alzheimer's Association</div>
+                    <div class="exp-meta">Oct 2024</div>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/755190769/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Travel grant ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">UGM Grant 2023</div>
+                    <div class="exp-org">Issued by AIIMS Research Section</div>
+                    <div class="exp-meta">Oct 2024 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <p class="exp-desc">Awarded ₹1,50,000 under the UGM program for a project measuring BNP (Brain Natriuretic Peptide) levels in infants with Transposition of Great Arteries (TGA).</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="award-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+                </div>
+                <div class="exp-main">
+                    <div class="exp-role">NTSE Scholar</div>
+                    <div class="exp-org">Issued by National Council of Educational Research and Training (NCERT)</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Background -->
     <div class="bg-card">
         <h2>Technical background</h2>
         <p>
-            Genomics · microarray · single-cell & bulk transcriptomics · proteomics · whole-slide histopathology ·
+            Genomics · microarray · single-cell &amp; bulk transcriptomics · proteomics · whole-slide histopathology ·
             MRI · ultrasound · EEG &nbsp;|&nbsp;
             Python · R · PyTorch · Seurat · SCENIC · CellChat · NicheNet · clusterProfiler · limma · glmnet ·
             TIAToolbox · CellViT · OpenCV · MNE
@@ -287,8 +722,10 @@
     </div>
 
     <!-- Projects -->
-    <div id="research">
-        <div class="section-label">Research projects</div>
+    <section id="projects">
+        <div class="section-head">
+            <h2>Research Projects</h2>
+        </div>
 
         <div class="filter-row">
             <button class="filter-btn active" data-filter="all">All</button>
@@ -572,7 +1009,7 @@
             </div>
         </div>
 
-    </div><!-- /research -->
+    </section>
 </div><!-- /page -->
 
 <script>
