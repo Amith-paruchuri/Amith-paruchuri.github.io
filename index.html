@@ -74,8 +74,8 @@
             margin-bottom: 56px;
         }
         .avatar {
-            width: 84px;
-            height: 84px;
+            width: 128px;
+            height: 128px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -170,10 +170,10 @@
 
         /* ── Institution crest ── */
         .crest {
-            width: 46px;
-            height: 46px;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
-            border: 1.4px solid var(--maroon);
+            border: 1.6px solid var(--maroon);
             background: var(--maroon-tint);
             display: flex;
             align-items: center;
@@ -184,15 +184,30 @@
             color: var(--maroon);
             letter-spacing: 0.01em;
         }
-        .crest.sm-text { font-size: 10px; }
-        .crest.md-text { font-size: 13px; }
-        .crest.lg-text { font-size: 16px; }
+        .crest.sm-text { font-size: 14px; }
+        .crest.md-text { font-size: 17px; }
+        .crest.lg-text { font-size: 20px; }
+
+        .crest-img {
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            border: 1.6px solid var(--maroon);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .crest-img img { width: 100%; height: 100%; object-fit: cover; }
+        .crest-img img.zoom-in { transform: scale(1.45); }
 
         .award-icon {
-            width: 46px;
-            height: 46px;
+            width: 74px;
+            height: 74px;
             border-radius: 50%;
-            border: 1.4px solid var(--maroon);
+            border: 1.6px solid var(--maroon);
             background: var(--maroon-tint);
             display: flex;
             align-items: center;
@@ -394,10 +409,10 @@
 
         @media (max-width: 560px) {
             .hero { gap: 18px; }
-            .avatar { width: 68px; height: 68px; }
+            .avatar { width: 92px; height: 92px; }
             .hero-body h1 { font-size: 22px; }
             .edu-item, .exp-item { gap: 14px; }
-            .crest { width: 40px; height: 40px; }
+            .crest, .crest-img, .award-icon { width: 56px; height: 56px; }
             .nav-links { gap: 14px; }
         }
     </style>
@@ -412,8 +427,8 @@
             <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
-            <a href="#awards">Awards</a>
             <a href="#projects">Projects</a>
+            <a href="#awards">Awards</a>
         </div>
     </div>
 </nav>
@@ -451,6 +466,10 @@
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.336"/></svg>
                     Kaggle
                 </a>
+                <a class="social-pill" href="https://www.aeternix.in/" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.7"/><circle cx="5" cy="17" r="1.7"/><circle cx="19" cy="17" r="1.7"/><path d="M12 6.2v4.3M12 10.5 6 15.6M12 10.5l6 5.1"/></svg>
+                    Aeternix
+                </a>
             </div>
         </div>
     </div>
@@ -458,9 +477,9 @@
     <!-- Bio essay -->
     <section id="bio" class="bio-essay">
         <p>My relationship with bioinformatics began with resentment, not fascination. Genes felt like a kind of quiet tyranny, predetermining everything from skin color to height to disease risk, long before a person had any say in the matter. That determinism unsettled me.</p>
-        <p>Slowly, that aversion turned into fascination once I began actually working with genetic data and realized genes were never meant to be read in isolation to begin with. Disease reveals itself differently across modalities &mdash; transcriptomic activity, tissue architecture, imaging &mdash; and it was this realization that pulled me toward multimodal data fusion as the problem I actually wanted to spend my career on.</p>
+        <p>Slowly, that aversion turned into fascination once I began actually working with genetic data and realized genes were never meant to be read in isolation to begin with. Disease reveals itself differently across modalities: transcriptomic activity, tissue architecture, imaging. It was this realization that pulled me toward multimodal data fusion as the problem I actually wanted to spend my career on.</p>
         <p>I am a final year medical student at <a href="https://www.aiims.edu/" target="_blank">AIIMS New Delhi</a>, India's top medical college, which I joined after securing Rank 43 among over 20 lakh candidates in <a href="https://neet.nta.nic.in/" target="_blank">NEET 2021</a> on a full scholarship. I am a <a href="https://iusstf.org/khorana-program-for-scholars" target="_blank">Khorana Scholar</a>, a distinction awarded to ten medical students across India each year, and spent a summer at the <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">MIND Data Science Lab</a> at Harvard Medical School studying astrocyte transcriptomic signatures in Alzheimer's disease and tauopathies using single-cell RNA sequencing.</p>
-        <p>Since then, my work has spanned computational pathology, genomics, proteomics, and imaging &mdash; all oriented around the same question: how do we combine these fragmented biological signals into models that actually reflect how disease behaves in a real patient. I co-founded <a href="https://www.aeternix.in/" target="_blank">Aeternix</a> alongside this research, working to solve the same fragmentation problem at the level of hospital data infrastructure in India.</p>
+        <p>Since then, my work has spanned computational pathology, genomics, proteomics, and imaging, all oriented around the same question: how do we combine these fragmented biological signals into models that actually reflect how disease behaves in a real patient. I co-founded <a href="https://www.aeternix.in/" target="_blank">Aeternix</a> alongside this research, working to solve the same fragmentation problem at the level of hospital data infrastructure in India.</p>
     </section>
 
     <!-- Education -->
@@ -471,17 +490,17 @@
         <div class="timeline">
 
             <div class="edu-item">
-                <div class="crest sm-text">AIIMS</div>
+                <div class="crest-img"><img src="AIIMS_New_Delhi.png" alt="AIIMS New Delhi"></div>
                 <div class="edu-body">
                     <div class="inst-name">All India Institute of Medical Sciences, New Delhi</div>
-                    <div class="inst-meta">Bachelor of Medicine, Bachelor of Surgery (MBBS) · Feb 2022 – May 2027 (expected)</div>
-                    <p class="inst-detail">Final-year medical student, clinical experience: Internal Medicine (26w), Surgery (22w), Community Medicine (13w), Obstetrics &amp; Gynaecology (9w), Paediatrics (9w), Psychiatry (9w), Ophthalmology (6w), Anaesthesiology (4w), Dermatology (3w), Emergency Medicine (3w).</p>
+                    <div class="inst-meta">Bachelor of Medicine, Bachelor of Surgery (MBBS) · April 2022 – May 2027 (expected)</div>
+                    <p class="inst-detail">Final-year medical student, currently completing the compulsory rotating internship (May 2026 – May 2027): Internal Medicine (26w), Surgery (22w), Community Medicine (13w), Obstetrics &amp; Gynaecology (9w), Paediatrics (9w), Psychiatry (9w), Ophthalmology (6w), Anaesthesiology (4w), Dermatology (3w), Emergency Medicine (3w).</p>
                     <p class="inst-detail">Admitted via <span class="highlight">NEET 2021, All India Rank 43 among over 20 lakh (2 million) candidates</span>, on a full scholarship covering the MBBS programme at India's top-ranked medical college.</p>
                 </div>
             </div>
 
             <div class="edu-item">
-                <div class="crest md-text">NJC</div>
+                <div class="crest-img"><img class="zoom-in" src="narayana.png" alt="Narayana Junior College"></div>
                 <div class="edu-body">
                     <div class="inst-name">Narayana Junior College</div>
                     <div class="inst-meta">Higher Secondary Education, Pre-Medical · Vijayawada, India · 2016 – 2020</div>
@@ -500,12 +519,12 @@
         <div class="exp-feed">
 
             <div class="exp-item">
-                <div class="crest sm-text">HMS</div>
+                <div class="crest-img"><img src="Harvard_University.png" alt="Harvard University"></div>
                 <div class="exp-main">
                     <div class="exp-role">Summer Researcher <span class="exp-badge">Khorana Scholar</span></div>
-                    <div class="exp-org">Department of Neurology, <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">Harvard Medical School</a> — MIND Data Science Lab, Mass General Brigham</div>
+                    <div class="exp-org">Department of Neurology, <a href="https://www.massgeneral.org/neurology/research/mind-data-science-lab" target="_blank">Harvard Medical School</a> · MIND Data Science Lab, Mass General Brigham</div>
                     <div class="exp-meta">May 2025 – Jul 2026 · 1 yr 3 mos · Boston, MA · On-site</div>
-                    <p class="exp-desc">Advised by Dr. Sudeshna Das. Determined the astrocyte transcriptomic signature and astrocyte-neuron interaction in tauopathies using single-cell RNA analysis — delivered as an oral presentation at AAIC 2026. Gained expertise in Seurat, clusterProfiler, CellChat, NicheNet, and Reactome in R.</p>
+                    <p class="exp-desc">Advised by Dr. Sudeshna Das. Determined the astrocyte transcriptomic signature and astrocyte-neuron interaction in tauopathies using single-cell RNA analysis, delivered as an oral presentation at AAIC 2026. Gained expertise in Seurat, clusterProfiler, CellChat, NicheNet, and Reactome in R.</p>
                     <p class="exp-desc" style="font-size:12.5px;color:var(--slate);">Named after Nobel Laureate Har Gobind Khorana, the Khorana Scholarship selects only 10 medical students across India each year.</p>
                     <div class="tool-tags">
                         <span class="tool-tag">Seurat</span>
@@ -520,12 +539,12 @@
             </div>
 
             <div class="exp-item">
-                <div class="crest md-text">Emory</div>
+                <div class="crest-img"><img src="EmoryUniversity-logo.png" alt="Emory University"></div>
                 <div class="exp-main">
                     <div class="exp-role">Research Intern</div>
-                    <div class="exp-org">Department of Bioengineering, <a href="https://med.emory.edu/departments/radiology/research/research-labs/madabhushi-lab/index.html" target="_blank">Emory University</a> — Madabhushi Lab</div>
+                    <div class="exp-org">Department of Bioengineering, <a href="https://med.emory.edu/departments/radiology/research/research-labs/madabhushi-lab/index.html" target="_blank">Emory University</a> · Madabhushi Lab</div>
                     <div class="exp-meta">Jul 2025 – Present · Atlanta, GA · Remote</div>
-                    <p class="exp-desc">Advised by Dr. Anant Madabhushi. Deciphered the immune architecture and role of tumor-infiltrating lymphocytes (TILs) as a survival biomarker in diffuse large B-cell lymphoma using deep learning — presented as a platform presentation at USCAP 2026.</p>
+                    <p class="exp-desc">Advised by Dr. Anant Madabhushi. Deciphered the immune architecture and role of tumor-infiltrating lymphocytes (TILs) as a survival biomarker in diffuse large B-cell lymphoma using deep learning, presented as a platform presentation at USCAP 2026.</p>
                     <p class="exp-desc">Also studied concordance between brain and retinal biological ages using multimodal imaging, presented as a poster at AAIC 2026.</p>
                     <div class="tool-tags">
                         <span class="tool-tag">CellViT</span>
@@ -541,10 +560,10 @@
             </div>
 
             <div class="exp-item">
-                <div class="crest md-text">UCam</div>
+                <div class="crest-img"><img src="cambridge.png" alt="University of Cambridge"></div>
                 <div class="exp-main">
                     <div class="exp-role">Machine Learning Summer School</div>
-                    <div class="exp-org"><a href="https://www.vanderschaar-lab.com/" target="_blank">University of Cambridge</a> — van der Schaar Lab</div>
+                    <div class="exp-org"><a href="https://www.vanderschaar-lab.com/" target="_blank">University of Cambridge</a> · van der Schaar Lab</div>
                     <div class="exp-meta">Aug 2025 – Sep 2025 · 2 mos · Remote</div>
                     <p class="exp-desc">Selected for the Cambridge Centre for AI in Medicine (CCAIM) summer school run by the van der Schaar Lab. Covered AutoML, ML fundamentals, predictive digital twins, medical imaging AI, AI governance, ML interpretability, protein language models for bacterial evolution prediction, AI-driven precision dosing, and foundation models in intensive care.</p>
                     <div class="tool-tags">
@@ -560,7 +579,7 @@
             </div>
 
             <div class="exp-item">
-                <div class="crest sm-text">ETHZ</div>
+                <div class="crest-img"><img src="ethz.png" alt="ETH Zurich"></div>
                 <div class="exp-main">
                     <div class="exp-role">Swiss Oncology Summer School</div>
                     <div class="exp-org">Organized by <a href="https://hest.ethz.ch/studium/medizin/summerschool.html" target="_blank">ETH Zurich</a></div>
@@ -577,10 +596,10 @@
             </div>
 
             <div class="exp-item">
-                <div class="crest sm-text">IISc</div>
+                <div class="crest-img"><img src="Indian_Institute_of_Science.png" alt="Indian Institute of Science"></div>
                 <div class="exp-main">
                     <div class="exp-role">MBBS/MPH Research Intern</div>
-                    <div class="exp-org">Department of Biochemistry, <a href="https://biochem.iisc.ac.in/sandeep-m-eswarappa.php" target="_blank">Indian Institute of Science</a> — Eswarappa Lab</div>
+                    <div class="exp-org">Department of Biochemistry, <a href="https://biochem.iisc.ac.in/sandeep-m-eswarappa.php" target="_blank">Indian Institute of Science</a> · Eswarappa Lab</div>
                     <div class="exp-meta">Jun 2024 – Jul 2024 · Bengaluru, India · On-site</div>
                     <p class="exp-desc">Advised by Dr. Sandeep M. Eswarappa. Studied translational readthrough in the DMD gene as a therapeutic strategy for Duchenne muscular dystrophy. Gained hands-on expertise in DNA/RNA extraction, PCR, agarose gel electrophoresis, heat-shock transformation, lipofectamine-based transfection, and Western blotting.</p>
                     <div class="tool-tags">
@@ -596,9 +615,9 @@
             </div>
 
             <div class="exp-item">
-                <div class="crest sm-text">CCMB</div>
+                <div class="crest-img"><img class="zoom-in" src="CCMB.png" alt="Centre for Cellular and Molecular Biology"></div>
                 <div class="exp-main">
-                    <div class="exp-role">Winter Research Intern — MedSRT 4.0</div>
+                    <div class="exp-role">Winter Research Intern, MedSRT 4.0</div>
                     <div class="exp-org"><a href="http://recruitment.ccmb.res.in/training_programs/MedSRT/" target="_blank">Centre for Cellular and Molecular Biology</a>, Hyderabad</div>
                     <div class="exp-meta">Dec 2024 – Jan 2025 · Dec 16–28, 2024 · Hyderabad, India</div>
                     <p class="exp-desc">Selected for the Medical Student Research Training Programme (MedSRT 4.0), one of 30 medical students nationwide, for hands-on training in molecular biology and genomic diagnostics.</p>
@@ -611,99 +630,6 @@
                     <div class="link-row">
                         <a href="http://recruitment.ccmb.res.in/training_programs/MedSRT/" target="_blank">MedSRT programme ↗</a>
                     </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Awards & Honors -->
-    <section id="awards">
-        <div class="section-head">
-            <h2>Awards &amp; Honors</h2>
-        </div>
-        <div class="exp-feed">
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">AAIC Travel Fellowship</div>
-                    <div class="exp-org">Issued by Alzheimer's Association</div>
-                    <div class="exp-meta">Jun 2026 · Associated with Harvard University</div>
-                    <p class="exp-desc">Awarded a travel grant to present research on transcriptomic heterogeneity of astrocytes in tauopathies at the Alzheimer's Association International Conference (AAIC) 2026, London.</p>
-                    <div class="link-row">
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Oral presentation ↗</a>
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">AAIC travel grant ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">Harvard Research Intern</div>
-                    <div class="exp-org">Issued by Massachusetts General Hospital, Harvard Medical School</div>
-                    <div class="exp-meta">May 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
-                    <div class="link-row">
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Invite &amp; stipend letter ↗</a>
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Harvard Medical School ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">Khorana Scholarship</div>
-                    <div class="exp-org">Issued by Indo-US Science &amp; Technology Forum (IUSSTF)</div>
-                    <div class="exp-meta">Feb 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
-                    <p class="exp-desc">Selected as a recipient of the Khorana Scholarship 2024. Named in tribute to Dr. Har Gobind Khorana, Nobel Laureate in 1968 for his pioneering work at the interface of chemistry and biology, the program fosters Indo-U.S. scientific collaboration by funding cutting-edge research at Harvard Medical School alongside leading mentors advancing the boundaries of science.</p>
-                    <div class="link-row">
-                        <a href="https://iusstf.org/khorana-program-for-scholars" target="_blank">Khorana Program for Scholars ↗</a>
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/1305445822/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Khorana offer letter ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">CNA Fellowship</div>
-                    <div class="exp-org">Issued by Alzheimer's Association</div>
-                    <div class="exp-meta">Oct 2024</div>
-                    <div class="link-row">
-                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/755190769/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Travel grant ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">UGM Grant 2023</div>
-                    <div class="exp-org">Issued by AIIMS Research Section</div>
-                    <div class="exp-meta">Oct 2024 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
-                    <p class="exp-desc">Awarded ₹1,50,000 under the UGM program for a project measuring BNP (Brain Natriuretic Peptide) levels in infants with Transposition of Great Arteries (TGA).</p>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="award-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
-                </div>
-                <div class="exp-main">
-                    <div class="exp-role">NTSE Scholar</div>
-                    <div class="exp-org">Issued by National Council of Educational Research and Training (NCERT)</div>
                 </div>
             </div>
 
@@ -764,14 +690,14 @@
         <!-- MASLD -->
         <div class="project-card" data-category="multiomics">
             <div class="card-header">
-                <span class="card-title">Transcriptomic drivers of MASLD progression — SPP1 as a central network hub</span>
+                <span class="card-title">Transcriptomic drivers of MASLD progression: SPP1 as a central network hub</span>
                 <span class="venue-badge badge-amber">ACG 2026</span>
             </div>
             <p class="card-desc">
                 RNA-seq from 216 liver biopsies (control, NAFL, NASH stratified F0–F4) identified a 563-gene
                 fibroinflammatory progression signature via voom-limma. GSEA showed enrichment of EMT, TNF/NF-κB,
                 and IL-6/STAT3 pathways with suppression of oxidative phosphorylation. STRING network analysis
-                identified SPP1 (osteopontin) as the dominant hub gene — betweenness 476, over double the next node —
+                identified SPP1 (osteopontin) as the dominant hub gene, with betweenness 476, more than double the next node,
                 rising progressively with fibrosis stage (FDR 2.9e-9).
             </p>
             <div class="tool-tags">
@@ -887,7 +813,7 @@
             </div>
             <p class="card-desc">
                 Standard targeted genomic panels leave a large fraction of variants unclassified in renal cell
-                carcinoma — a critical gap in populations underrepresented in global databases. This cross-sectional
+                carcinoma, a critical gap in populations underrepresented in global databases. This cross-sectional
                 study uses whole-exome sequencing in histologically confirmed metastatic RCC patients enrolled at
                 AIIMS New Delhi. Variants in RCC susceptibility and RCC-related genes are classified per ACMG
                 guidelines, with VUS subsequently re-evaluated against IndiGenomes, an indigenous Indian population
@@ -978,7 +904,7 @@
             </div>
             <p class="card-desc">
                 RGB crops around cell coordinates were generated and fused with SAM-derived segmentation masks to
-                train a ResNet classifier for mitotic figure detection — a critical prognostic marker across
+                train a ResNet classifier for mitotic figure detection, a critical prognostic marker across
                 multiple tumor types.
             </p>
             <div class="tool-tags">
@@ -1010,6 +936,87 @@
         </div>
 
     </section>
+
+    <!-- Awards & Honors -->
+    <section id="awards">
+        <div class="section-head">
+            <h2>Awards &amp; Honors</h2>
+        </div>
+        <div class="exp-feed">
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="AAIC-2026-Logo.png" alt="AAIC 2026"></div>
+                <div class="exp-main">
+                    <div class="exp-role">AAIC Travel Fellowship</div>
+                    <div class="exp-org">Issued by Alzheimer's Association</div>
+                    <div class="exp-meta">Jun 2026 · Associated with Harvard University</div>
+                    <p class="exp-desc">Awarded a travel grant to present research on transcriptomic heterogeneity of astrocytes in tauopathies at the Alzheimer's Association International Conference (AAIC) 2026, London.</p>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Oral presentation ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/918716864/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">AAIC travel grant ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="Harvard_University.png" alt="Harvard University"></div>
+                <div class="exp-main">
+                    <div class="exp-role">Harvard Research Intern</div>
+                    <div class="exp-org">Issued by Massachusetts General Hospital, Harvard Medical School</div>
+                    <div class="exp-meta">May 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Invite &amp; stipend letter ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/655692725/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Harvard Medical School ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="khoranaprogram.png" alt="Khorana Program for Scholars"></div>
+                <div class="exp-main">
+                    <div class="exp-role">Khorana Scholarship</div>
+                    <div class="exp-org">Issued by Indo-US Science &amp; Technology Forum (IUSSTF)</div>
+                    <div class="exp-meta">Feb 2025 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <p class="exp-desc">Selected as a recipient of the Khorana Scholarship 2024. Named in tribute to Dr. Har Gobind Khorana, Nobel Laureate in 1968 for his pioneering work at the interface of chemistry and biology, the program fosters Indo-U.S. scientific collaboration by funding cutting-edge research at Harvard Medical School alongside leading mentors advancing the boundaries of science.</p>
+                    <div class="link-row">
+                        <a href="https://iusstf.org/khorana-program-for-scholars" target="_blank">Khorana Program for Scholars ↗</a>
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/1305445822/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Khorana offer letter ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="CNA.png" alt="CNA"></div>
+                <div class="exp-main">
+                    <div class="exp-role">CNA Fellowship</div>
+                    <div class="exp-org">Issued by Alzheimer's Association</div>
+                    <div class="exp-meta">Oct 2024</div>
+                    <div class="link-row">
+                        <a href="https://www.linkedin.com/in/amith-paruchuri-a2b7522ba/overlay/Honor/755190769/treasury/?profileId=ACoAAEykHEMBNGlDuqD9JCBzPYhfGOB_2ZNQq1Y" target="_blank">Travel grant ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="AIIMS_New_Delhi.png" alt="AIIMS New Delhi"></div>
+                <div class="exp-main">
+                    <div class="exp-role">UGM Grant 2023</div>
+                    <div class="exp-org">Issued by AIIMS Research Section</div>
+                    <div class="exp-meta">Oct 2024 · Associated with All India Institute of Medical Sciences (AIIMS)</div>
+                    <p class="exp-desc">Awarded ₹1,50,000 under the UGM program for a project measuring BNP (Brain Natriuretic Peptide) levels in infants with Transposition of Great Arteries (TGA).</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="crest-img"><img src="NTSE.png" alt="NTSE"></div>
+                <div class="exp-main">
+                    <div class="exp-role">NTSE Scholar</div>
+                    <div class="exp-org">Issued by National Council of Educational Research and Training (NCERT)</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </div><!-- /page -->
 
 <script>
@@ -1031,6 +1038,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>
