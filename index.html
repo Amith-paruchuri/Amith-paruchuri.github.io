@@ -170,6 +170,17 @@
         .blob.b1 { width: 380px; height: 380px; top: -40px; right: -60px; background: radial-gradient(circle, rgba(163,69,58,0.22), transparent 70%); }
         .blob.b2 { width: 300px; height: 300px; top: 160px; right: 220px; background: radial-gradient(circle, rgba(200,155,90,0.22), transparent 70%); }
 
+        .neural {
+            position: absolute;
+            top: -64px; bottom: -40px;
+            left: 50%;
+            width: 100vw;
+            transform: translateX(-50%);
+            z-index: -1;
+            pointer-events: none;
+            -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+                    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+        }
         .hero {
             display: flex;
             gap: 40px;
@@ -256,31 +267,6 @@
             box-shadow: 0 8px 18px -10px rgba(124,42,42,0.45);
         }
         .social-pill svg { width: 13px; height: 13px; }
-
-        /* ── Stats strip ── */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            margin-top: 52px;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-        .stat {
-            padding: 20px 18px 18px;
-            border-left: 1px solid var(--line);
-        }
-        .stat:first-child { border-left: none; padding-left: 0; }
-        .stat-num {
-            font-family: 'Newsreader', serif;
-            font-size: 34px;
-            line-height: 1;
-            font-weight: 500;
-            color: var(--ink);
-            font-variant-numeric: tabular-nums;
-            margin-bottom: 8px;
-        }
-        .stat-num small { font-size: 18px; color: var(--maroon); margin-left: 2px; }
-        .stat-label { font-size: 12px; color: var(--slate); line-height: 1.45; }
 
         /* ── Bio essay ── */
         .bio-essay {
@@ -801,9 +787,6 @@
 
         @media (max-width: 860px) {
             .project-grid, .award-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .stat:nth-child(3) { border-left: none; padding-left: 0; }
-            .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
         }
         @media (max-width: 680px) {
             .nav-inner { padding: 10px 16px; }
@@ -817,9 +800,6 @@
             .avatar-wrap { width: 112px; height: 112px; }
             .avatar { width: 96px; height: 96px; }
             .hero-body .tagline { font-size: 17px; }
-            .stats { margin-top: 36px; }
-            .stat { padding: 16px 12px 14px; }
-            .stat-num { font-size: 28px; }
             .bio-essay p { font-size: 17px; }
             .bio-essay p:first-child { font-size: 19px; }
             .bio-essay p:first-child::first-letter { font-size: 56px; }
@@ -873,6 +853,7 @@
     <div class="hero-wrap" id="about">
     <div class="blob b1" aria-hidden="true"></div>
     <div class="blob b2" aria-hidden="true"></div>
+    <canvas class="neural" aria-hidden="true"></canvas>
     <div class="hero">
         <div class="avatar-wrap" data-reveal>
             <div class="avatar-ring" aria-hidden="true"></div>
@@ -913,12 +894,6 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="stats">
-        <div class="stat" data-reveal><div class="stat-num" data-count="43">43</div><div class="stat-label">All India Rank, NEET 2021 (20 lakh+ candidates)</div></div>
-        <div class="stat" data-reveal><div class="stat-num" data-count="10"><small>1 of</small> 10</div><div class="stat-label">Khorana Scholars selected nationally</div></div>
-        <div class="stat" data-reveal><div class="stat-num" data-count-from="projects">12</div><div class="stat-label">Research projects across omics, imaging and pathology</div></div>
-        <div class="stat" data-reveal><div class="stat-num" data-count-from="labs">6</div><div class="stat-label">Research institutions, from Harvard to IISc</div></div>
     </div>
     </div>
 
