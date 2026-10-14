@@ -16,10 +16,11 @@
         var cv = $('.neural');
         if (!cv || !cv.getContext) return;
         var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!finePointer || reducedMotion) { cv.remove(); return; }
+        if (reducedMotion) { cv.remove(); return; }
+        var touch = !finePointer;
         var ctx = cv.getContext('2d'), W = 0, H = 0, nodes = [], running = false, visible = true;
         var m = { x: -9999, y: -9999, on: false };
-        var LINK = 120, REACH = 170;
+        var LINK = finePointer ? 120 : 100, REACH = finePointer ? 170 : 140;
         var rgb = '124,42,42';
 
         function size() {
@@ -27,7 +28,7 @@
             W = r.width; H = r.height;
             cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            var target = Math.min(110, Math.round(W * H / 11000));
+            var target = touch ? Math.min(45, Math.round(W * H / 5500)) : Math.min(110, Math.round(W * H / 11000));
             while (nodes.length < target) nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .32, vy: (Math.random() - .5) * .32, r: 1 + Math.random() * 1.5 });
             nodes.length = target;
         }
@@ -39,6 +40,20 @@
             m.on = m.y >= 0 && m.y <= H;
         }, { passive: true });
         document.addEventListener('pointerleave', function () { m.on = false; });
+
+        /* Phones: link up around the finger while it touches the hero, let go shortly after lifting */
+        var lift;
+        function onTouch(e) {
+            var t = e.touches && e.touches[0];
+            if (!t) return;
+            var r = cv.getBoundingClientRect();
+            m.x = t.clientX - r.left; m.y = t.clientY - r.top;
+            m.on = m.y >= 0 && m.y <= H;
+            clearTimeout(lift);
+        }
+        window.addEventListener('touchstart', onTouch, { passive: true });
+        window.addEventListener('touchmove', onTouch, { passive: true });
+        window.addEventListener('touchend', function () { clearTimeout(lift); lift = setTimeout(function () { m.on = false; }, 700); }, { passive: true });
 
         function frame() {
             if (!visible) { running = false; return; }
