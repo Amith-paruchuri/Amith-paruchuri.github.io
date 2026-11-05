@@ -748,6 +748,76 @@
         .to-top svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
         .to-top:hover svg { transform: translateY(-3px); }
 
+        /* ── Gallery ── */
+        .gallery-grid { column-count: 3; column-gap: 14px; }
+        .gallery-item {
+            display: block;
+            width: 100%;
+            margin: 0 0 14px;
+            padding: 0;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ece8dc;
+            cursor: zoom-in;
+            break-inside: avoid;
+            line-height: 0;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow .35s var(--ease), border-color .35s var(--ease);
+        }
+        .gallery-item:hover { box-shadow: var(--shadow-lg); border-color: #d6d0c0; }
+        .gallery-item:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; }
+        .gallery-item img { width: 100%; height: auto; display: block; transition: transform .7s var(--ease); }
+        .gallery-item:hover img { transform: scale(1.035); }
+
+        .glb {
+            position: fixed;
+            inset: 0;
+            z-index: 310;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 5vh 5vw;
+            background: rgba(20,18,16,0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .glb.open { display: flex; animation: glb-in .25s ease; }
+        @keyframes glb-in { from { opacity: 0; } to { opacity: 1; } }
+        .glb img {
+            max-width: 100%;
+            max-height: 86vh;
+            border-radius: 10px;
+            box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6);
+            user-select: none;
+        }
+        .glb-btn {
+            position: absolute;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        .glb-btn:hover { background: rgba(255,255,255,0.2); }
+        .glb-close { top: 18px; right: 18px; }
+        .glb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+        .glb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+        .glb-count {
+            position: absolute;
+            bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+        }
+        @media (max-width: 860px) { .gallery-grid { column-count: 2; column-gap: 10px; } .gallery-item { margin-bottom: 10px; } }
+        @media (max-width: 680px) { .glb-prev { left: 8px; } .glb-next { right: 8px; } .glb-btn { width: 40px; height: 40px; } }
+
         /* ── Lightbox ── */
         .lightbox {
             position: fixed;
@@ -844,6 +914,7 @@
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#awards">Awards</a>
+            <a href="#gallery">Gallery</a>
         </div>
     </div>
 </nav>
@@ -1475,6 +1546,50 @@
 
         </div>
     </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="section-head" data-reveal>
+            <span class="section-num">05</span>
+            <h2>Gallery</h2>
+            <span class="section-note">tap a photo to enlarge</span>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 1 of 33"><img src="Gallery1.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 1 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 2 of 33"><img src="Gallery2.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 2 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 3 of 33"><img src="Gallery3.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Photo 3 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 4 of 33"><img src="Gallery4.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 4 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 5 of 33"><img src="Gallery5.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 5 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 6 of 33"><img src="Gallery6.jpg" width="1164" height="758" loading="lazy" decoding="async" alt="Photo 6 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 7 of 33"><img src="Gallery7.jpg" width="979" height="1600" loading="lazy" decoding="async" alt="Photo 7 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 8 of 33"><img src="Gallery8.jpg" width="1600" height="1588" loading="lazy" decoding="async" alt="Photo 8 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 9 of 33"><img src="Gallery9.jpg" width="1600" height="1581" loading="lazy" decoding="async" alt="Photo 9 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 10 of 33"><img src="Gallery10.jpg" width="1600" height="1359" loading="lazy" decoding="async" alt="Photo 10 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 11 of 33"><img src="Gallery11.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 11 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 12 of 33"><img src="Gallery12.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 12 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 13 of 33"><img src="Gallery13.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 13 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 14 of 33"><img src="Gallery14.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 14 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 15 of 33"><img src="Gallery15.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 15 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 16 of 33"><img src="Gallery16.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 16 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 17 of 33"><img src="Gallery17.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 17 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 18 of 33"><img src="Gallery18.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 18 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 19 of 33"><img src="Gallery19.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 19 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 20 of 33"><img src="Gallery20.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 20 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 21 of 33"><img src="Gallery21.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 21 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 22 of 33"><img src="Gallery22.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Photo 22 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 23 of 33"><img src="Gallery23.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 23 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 24 of 33"><img src="Gallery24.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 24 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 25 of 33"><img src="Gallery25.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 25 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 26 of 33"><img src="Gallery26.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 26 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 27 of 33"><img src="Gallery27.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 27 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 28 of 33"><img src="Gallery28.jpg" width="1206" height="1507" loading="lazy" decoding="async" alt="Photo 28 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 29 of 33"><img src="Gallery29.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Photo 29 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 30 of 33"><img src="Gallery30.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 30 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 31 of 33"><img src="Gallery31.jpg" width="1298" height="1600" loading="lazy" decoding="async" alt="Photo 31 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 32 of 33"><img src="Gallery32.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Photo 32 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 33 of 33"><img src="Gallery33.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 33 from the gallery"></button>
+        </div>
+    </section>
 </div><!-- /page -->
 
 <footer>
@@ -1490,7 +1605,63 @@
     <img alt="">
 </div>
 
+<div class="glb" id="glb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="glb-btn glb-close" id="glb-close" aria-label="Close">&times;</button>
+    <button class="glb-btn glb-prev" id="glb-prev" aria-label="Previous photo">&#8249;</button>
+    <img id="glb-img" src="" alt="">
+    <button class="glb-btn glb-next" id="glb-next" aria-label="Next photo">&#8250;</button>
+    <div class="glb-count" id="glb-count"></div>
+</div>
+
 <script src="motion.min.js"></script>
 <script src="site.js"></script>
+<script>
+(function () {
+    var grid = document.getElementById('gallery-grid');
+    var box = document.getElementById('glb');
+    var img = document.getElementById('glb-img');
+    var count = document.getElementById('glb-count');
+    if (!grid || !box) return;
+    var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+    var idx = 0, touchX = null;
+
+    function show() {
+        var src = items[idx].querySelector('img').getAttribute('src');
+        img.src = src;
+        count.textContent = (idx + 1) + ' / ' + items.length;
+        var next = items[(idx + 1) % items.length].querySelector('img').getAttribute('src');
+        var pre = new Image(); pre.src = next;
+    }
+    function open(i) {
+        idx = i; show();
+        box.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function close() {
+        box.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function step(d) { idx = (idx + d + items.length) % items.length; show(); }
+
+    items.forEach(function (it, i) { it.addEventListener('click', function () { open(i); }); });
+    document.getElementById('glb-close').addEventListener('click', close);
+    document.getElementById('glb-prev').addEventListener('click', function () { step(-1); });
+    document.getElementById('glb-next').addEventListener('click', function () { step(1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+        if (!box.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+    });
+    box.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+        touchX = null;
+    }, { passive: true });
+})();
+</script>
 </body>
 </html>
