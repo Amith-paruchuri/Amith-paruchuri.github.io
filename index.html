@@ -750,6 +750,9 @@
 
         /* ── Gallery ── */
         .gallery-grid { column-count: 3; column-gap: 14px; }
+        .gallery-grid.is-masonry { column-count: auto; display: flex; gap: 14px; align-items: flex-start; }
+        .gallery-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+        .gallery-grid.is-masonry .gallery-item { margin: 0; }
         .gallery-item {
             display: block;
             width: 100%;
@@ -816,6 +819,7 @@
             letter-spacing: 0.06em;
         }
         @media (max-width: 860px) { .gallery-grid { column-count: 2; column-gap: 10px; } .gallery-item { margin-bottom: 10px; } }
+        @media (max-width: 860px) { .gallery-grid.is-masonry, .gallery-col { gap: 10px; } }
         @media (max-width: 680px) { .glb-prev { left: 8px; } .glb-next { right: 8px; } .glb-btn { width: 40px; height: 40px; } }
 
         /* ── Lightbox ── */
@@ -1555,39 +1559,38 @@
             <span class="section-note">tap a photo to enlarge</span>
         </div>
         <div class="gallery-grid" id="gallery-grid">
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 1 of 33"><img src="Gallery1.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 1 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 2 of 33"><img src="Gallery2.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 2 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 3 of 33"><img src="Gallery3.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Photo 3 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 4 of 33"><img src="Gallery4.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 4 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 5 of 33"><img src="Gallery5.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 5 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 6 of 33"><img src="Gallery6.jpg" width="1164" height="758" loading="lazy" decoding="async" alt="Photo 6 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 7 of 33"><img src="Gallery7.jpg" width="979" height="1600" loading="lazy" decoding="async" alt="Photo 7 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 8 of 33"><img src="Gallery8.jpg" width="1600" height="1588" loading="lazy" decoding="async" alt="Photo 8 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 9 of 33"><img src="Gallery9.jpg" width="1600" height="1581" loading="lazy" decoding="async" alt="Photo 9 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 10 of 33"><img src="Gallery10.jpg" width="1600" height="1359" loading="lazy" decoding="async" alt="Photo 10 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 11 of 33"><img src="Gallery11.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 11 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 12 of 33"><img src="Gallery12.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 12 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 13 of 33"><img src="Gallery13.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 13 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 14 of 33"><img src="Gallery14.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 14 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 15 of 33"><img src="Gallery15.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 15 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 16 of 33"><img src="Gallery16.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 16 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 17 of 33"><img src="Gallery17.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 17 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 18 of 33"><img src="Gallery18.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 18 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 19 of 33"><img src="Gallery19.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 19 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 20 of 33"><img src="Gallery20.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 20 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 21 of 33"><img src="Gallery21.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 21 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 22 of 33"><img src="Gallery22.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Photo 22 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 23 of 33"><img src="Gallery23.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 23 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 24 of 33"><img src="Gallery24.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 24 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 25 of 33"><img src="Gallery25.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 25 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 26 of 33"><img src="Gallery26.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 26 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 27 of 33"><img src="Gallery27.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 27 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 28 of 33"><img src="Gallery28.jpg" width="1206" height="1507" loading="lazy" decoding="async" alt="Photo 28 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 29 of 33"><img src="Gallery29.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Photo 29 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 30 of 33"><img src="Gallery30.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 30 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 31 of 33"><img src="Gallery31.jpg" width="1298" height="1600" loading="lazy" decoding="async" alt="Photo 31 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 32 of 33"><img src="Gallery32.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Photo 32 from the gallery"></button>
-            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 33 of 33"><img src="Gallery33.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 33 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 1 of 32"><img src="Gallery7.jpg" width="979" height="1600" loading="lazy" decoding="async" alt="Photo 1 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 2 of 32"><img src="Gallery25.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 2 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 3 of 32"><img src="Gallery33.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 3 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 4 of 32"><img src="Gallery1.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 4 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 5 of 32"><img src="Gallery24.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 5 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 6 of 32"><img src="Gallery22.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Photo 6 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 7 of 32"><img src="Gallery21.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 7 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 8 of 32"><img src="Gallery26.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 8 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 9 of 32"><img src="Gallery28.jpg" width="1206" height="1507" loading="lazy" decoding="async" alt="Photo 9 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 10 of 32"><img src="Gallery27.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 10 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 11 of 32"><img src="Gallery5.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 11 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 12 of 32"><img src="Gallery4.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="Photo 12 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 13 of 32"><img src="Gallery16.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 13 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 14 of 32"><img src="Gallery17.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 14 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 15 of 32"><img src="Gallery19.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 15 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 16 of 32"><img src="Gallery15.jpg" width="736" height="1600" loading="lazy" decoding="async" alt="Photo 16 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 17 of 32"><img src="Gallery18.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 17 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 18 of 32"><img src="Gallery2.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 18 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 19 of 32"><img src="Gallery3.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Photo 19 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 20 of 32"><img src="Gallery6.jpg" width="1164" height="758" loading="lazy" decoding="async" alt="Photo 20 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 21 of 32"><img src="Gallery8.jpg" width="1600" height="1588" loading="lazy" decoding="async" alt="Photo 21 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 22 of 32"><img src="Gallery9.jpg" width="1600" height="1581" loading="lazy" decoding="async" alt="Photo 22 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 23 of 32"><img src="Gallery10.jpg" width="1600" height="1359" loading="lazy" decoding="async" alt="Photo 23 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 24 of 32"><img src="Gallery11.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 24 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 25 of 32"><img src="Gallery12.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 25 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 26 of 32"><img src="Gallery14.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 26 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 27 of 32"><img src="Gallery20.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Photo 27 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 28 of 32"><img src="Gallery23.jpg" width="1200" height="1600" loading="lazy" decoding="async" alt="Photo 28 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 29 of 32"><img src="Gallery29.jpg" width="720" height="1280" loading="lazy" decoding="async" alt="Photo 29 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 30 of 32"><img src="Gallery30.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Photo 30 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 31 of 32"><img src="Gallery31.jpg" width="1298" height="1600" loading="lazy" decoding="async" alt="Photo 31 from the gallery"></button>
+            <button class="gallery-item" type="button" data-reveal aria-label="Open photo 32 of 32"><img src="Gallery32.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Photo 32 from the gallery"></button>
         </div>
     </section>
 </div><!-- /page -->
@@ -1624,6 +1627,34 @@
     if (!grid || !box) return;
     var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
     var idx = 0, touchX = null;
+
+    /* Masonry that keeps reading order: each photo goes to the currently shortest column,
+       so the first photos land across the top row. `items` stays in order for the viewer. */
+    var colCount = 0;
+    function layout() {
+        var n = window.innerWidth <= 860 ? 2 : 3;
+        if (n === colCount) return;
+        colCount = n;
+        while (grid.firstChild) grid.removeChild(grid.firstChild);
+        grid.classList.add('is-masonry');
+        var cols = [], heights = [];
+        for (var c = 0; c < n; c++) {
+            var el = document.createElement('div');
+            el.className = 'gallery-col';
+            grid.appendChild(el); cols.push(el); heights.push(0);
+        }
+        items.forEach(function (it) {
+            var im = it.querySelector('img');
+            var ratio = (parseInt(im.getAttribute('height'), 10) || 1) / (parseInt(im.getAttribute('width'), 10) || 1);
+            var k = 0;
+            for (var c = 1; c < n; c++) if (heights[c] < heights[k] - 0.001) k = c;
+            cols[k].appendChild(it);
+            heights[k] += ratio;
+        });
+    }
+    layout();
+    var rz;
+    window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(layout, 150); });
 
     function show() {
         var src = items[idx].querySelector('img').getAttribute('src');
